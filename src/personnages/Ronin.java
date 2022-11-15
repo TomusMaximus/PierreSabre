@@ -15,4 +15,18 @@ public class Ronin extends Humain{
 		beneficiaire.recevoir(don);
 	}
 
+	public void provoquer(Yakuza ennemi) {
+		parler("Je t'ai trouve petite vermine, tu vas payer pour ce que tu as fait à ce pauvre marchand! ");
+		if (2 * reputation >= ennemi.getReputation()) 
+		{
+			ennemi.perdre(this);
+			reputation++;
+		}
+		else 
+		{
+			ennemi.gagner(this);
+			reputation--;
+		}
+	}
+	
 }
